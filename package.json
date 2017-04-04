@@ -1,0 +1,15 @@
+{
+  "name": "project-workflow",
+  "version": "0.0.1",
+  "description": "Project develompent workflow",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/i-tea/project-workflow.git"
+  },
+  "author": "@i-tea (Petr Pavelka)",
+  "license": "GNU",
+  "bugs": {
+    "url": "https://github.com/i-tea/project-workflow/issues"
+  },
+  "homepage": "https://github.com/i-tea/project-workflow#readme"
+}
