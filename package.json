@@ -11,5 +11,9 @@
   "bugs": {
     "url": "https://github.com/i-tea/project-workflow/issues"
   },
-  "homepage": "https://github.com/i-tea/project-workflow#readme"
+  "homepage": "https://github.com/i-tea/project-workflow#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-util": "^3.0.8"
+  }
 }
