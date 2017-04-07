@@ -1,5 +1,6 @@
 var gulp = require('gulp'),
     util = require('gulp-util'),
+    browserify = require('gulp-browserify'),
     concat = require('gulp-concat');
 
 var jsSrc = ['dev/scripts/*.js'];
