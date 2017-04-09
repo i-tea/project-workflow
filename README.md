@@ -8,5 +8,5 @@
 - Sass - use cmd, go to the ruby directory and type **gem install sass**
 - Compass - use cmd, go to the ruby directory and type **gem install compass**
 
-
-
+## Set up a Ruby path variable: (only for windows users) - issue solved
+open CMD and type: **set PATH=%PATH%;C:\Ruby\bin** (your Ruby folder can be somewhere else - find where did U install it)
