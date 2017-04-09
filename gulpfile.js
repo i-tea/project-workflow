@@ -29,3 +29,5 @@ gulp.task('compass', function () {
         //.on('error', gutil.log)
         .pipe(gulp.dest('assets/css'));
 });
+
+gulp.task('default', ['js', 'compass']);
