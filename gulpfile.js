@@ -30,4 +30,9 @@ gulp.task('compass', function () {
         .pipe(gulp.dest('assets/css'));
 });
 
+gulp.task('watch', function () {
+    gulp.watch(jsSrc, ['js']);
+
+});
+
 gulp.task('default', ['js', 'compass']);
