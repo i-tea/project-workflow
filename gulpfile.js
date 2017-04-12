@@ -3,10 +3,14 @@ var gulp = require('gulp'),
     browserify = require('gulp-browserify'),
     compass = require('gulp-compass'),
     concat = require('gulp-concat'),
-    connect = require('gulp-connect');
+    connect = require('gulp-connect'),
+    handlebars = require('gulp-handlebars'),
+    wrap = require('gulp-wrap'),
+    declare = require('gulp-declare');
 
 var jsSrc = ['dev/scripts/*.js'];
 var sassSrc = ['dev/sass/style.scss'];
+var tplSrc = ['dev/tpl/*.hbs'];
 
 gulp.task('log', function () {
     util.log('Starting project workflow');
@@ -41,11 +45,21 @@ gulp.task('connect', function(){
     });
 });
 
+gulp.task('templates', function () {
+    gulp.src(tplSrc)
+    .pipe(handlebars())
+    .pipe(wrap('Handlebars.template(<%= contents %>)'))
+    .pipe(declare({
+        namespace: 'HBTemplates',
+        noRedeclare: true
+    }))
+    .pipe(concat('templates.js'))
+    .pipe(gulp.dest('assets/js'));
+});
+
 gulp.task('watch', function () {
     gulp.watch(jsSrc, ['js']);
     gulp.watch('dev/sass/*.scss', ['compass']);
-
-
 });
 
 gulp.task('default', ['js', 'compass', 'connect', 'watch']);
