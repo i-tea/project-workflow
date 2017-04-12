@@ -5,12 +5,13 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     connect = require('gulp-connect'),
     handlebars = require('gulp-handlebars'),
-    wrap = require('gulp-wrap'),
-    declare = require('gulp-declare');
+    compileHandlebars = require('gulp-compile-handlebars'),
+    rename = require('gulp-rename');
 
 var jsSrc = ['dev/scripts/*.js'];
 var sassSrc = ['dev/sass/style.scss'];
 var tplSrc = ['dev/tpl/*.hbs'];
+
 
 gulp.task('log', function () {
     util.log('Starting project workflow');
@@ -46,15 +47,11 @@ gulp.task('connect', function(){
 });
 
 gulp.task('templates', function () {
-    gulp.src(tplSrc)
-    .pipe(handlebars())
-    .pipe(wrap('Handlebars.template(<%= contents %>)'))
-    .pipe(declare({
-        namespace: 'HBTemplates',
-        noRedeclare: true
-    }))
-    .pipe(concat('templates.js'))
-    .pipe(gulp.dest('assets/js'));
+    gulp.src('dev/tpl/index.hbs')
+        .pipe(handlebars())
+        .pipe(rename('index.html'))
+        .pipe(gulp.dest('assets/'));
+
 });
 
 gulp.task('watch', function () {
