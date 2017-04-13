@@ -1,0 +1,20 @@
+{
+  "name": "project-workflow",
+  "description": "Project develompent workflow",
+  "main": "",
+  "authors": [
+    "@i-tea (Petr Pavelka)"
+  ],
+  "license": "GNU",
+  "homepage": "https://github.com/i-tea/project-workflow",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "^3.3.7"
+  }
+}
