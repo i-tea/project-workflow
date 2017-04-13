@@ -6,6 +6,7 @@ var gulp = require('gulp'),
     connect = require('gulp-connect'),
     handlebars = require('gulp-handlebars'),
     compileHandlebars = require('gulp-compile-handlebars'),
+    wiredep = require('wiredep').stream,
     rename = require('gulp-rename');
 
 var jsSrc = ['dev/scripts/*.js'];
@@ -27,6 +28,7 @@ gulp.task('js', function () {
 
 gulp.task('compass', function () {
     gulp.src(sassSrc)
+        .pipe(wiredep())
         .pipe(compass({
             css: 'assets/css',
             sass: 'dev/sass',
