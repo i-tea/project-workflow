@@ -13,7 +13,6 @@ var jsSrc = ['dev/scripts/*.js'];
 var sassSrc = ['dev/sass/style.scss'];
 var tplSrc = ['dev/tpl/*.hbs'];
 
-
 gulp.task('log', function () {
     util.log('Starting project workflow');
 });
@@ -49,11 +48,13 @@ gulp.task('connect', function(){
 });
 
 gulp.task('templates', function () {
+    options = {
+    }
+    
     gulp.src('dev/tpl/index.hbs')
-        .pipe(handlebars())
+        .pipe(compileHandlebars(options))
         .pipe(rename('index.html'))
         .pipe(gulp.dest('assets/'));
-
 });
 
 gulp.task('watch', function () {
