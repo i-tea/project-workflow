@@ -1,0 +1,17 @@
+<!-- layout.nunjucks -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Project workflow @i-tea</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- block -->
+  {% block content %} {% endblock %}
+
+  <script src="js/script.js"></script>
+</body>
+</html>

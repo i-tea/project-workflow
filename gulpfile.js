@@ -4,18 +4,16 @@ var gulp = require('gulp'),
     compass = require('gulp-compass'),
     concat = require('gulp-concat'),
     connect = require('gulp-connect'),
-    handlebars = require('gulp-handlebars'),
-    compileHandlebars = require('gulp-compile-handlebars'),
+    //handlebars = require('gulp-handlebars'),
+    //compileHandlebars = require('gulp-compile-handlebars'),
     wiredep = require('wiredep').stream,
+    nunjucks = require('gulp-nunjucks-render'),
     rename = require('gulp-rename');
 
 var jsSrc = ['dev/scripts/*.js'];
 var sassSrc = ['dev/sass/style.scss'];
 var tplSrc = ['dev/tpl/*.hbs'];
-
-gulp.task('log', function () {
-    util.log('Starting project workflow');
-});
+var nunjucksSrc = ['dev/tpl/*.+(html|nunjucks)'];
 
 gulp.task('js', function () {
     gulp.src(jsSrc)
@@ -47,19 +45,18 @@ gulp.task('connect', function(){
     });
 });
 
-gulp.task('templates', function () {
-    options = {
-    }
-    
-    gulp.src('dev/tpl/index.hbs')
-        .pipe(compileHandlebars(options))
-        .pipe(rename('index.html'))
-        .pipe(gulp.dest('assets/'));
+gulp.task('nunjucks', function() {
+  return gulp.src(nunjucksSrc)
+  .pipe(nunjucks({
+      path: ['dev/tpl/']
+    }))
+  .pipe(gulp.dest('assets'))
 });
 
 gulp.task('watch', function () {
     gulp.watch(jsSrc, ['js']);
     gulp.watch('dev/sass/*.scss', ['compass']);
+    gulp.watch(nunjucksSrc, ['nunjucks']);
 });
 
-gulp.task('default', ['js', 'compass', 'connect', 'watch']);
+gulp.task('default', ['js', 'compass', 'connect', 'nunjucks', 'watch']);
