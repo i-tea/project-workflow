@@ -10,3 +10,9 @@
 
 ## Set up a Ruby path variable: (only for windows users) - issue solved
 open CMD and type: **set PATH=%PATH%;C:\Ruby\bin** (your Ruby folder can be somewhere else - find where did U install it)
+
+## Project core:
+- [Nunjucks](https://mozilla.github.io/nunjucks/)
+- [Bootstrap](http://getbootstrap.com/)
+- [jQuery](https://jquery.com/)
+- [Compass](http://compass-style.org/)
