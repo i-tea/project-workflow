@@ -1,0 +1,12 @@
+<!-- navigation.nunjucks -->
+{% macro active(activePage='home') %}
+<nav class="navbar navbar-default">
+  <div class="container">
+    <ul class="nav nav-tabs">
+      <li><a href="#" class="{%if activePage == 'home' %} active {% endif %}">Home</a></li>
+      <li><a href="#" class="{%if activePage == 'about' %} active {% endif %}">About</a></li>
+      <li><a href="#" class="{%if activePage == 'contact' %} active {% endif %}">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+{% endmacro %}

@@ -1,5 +1,4 @@
 <!-- layout.nunjucks -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,10 +7,7 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-
-  <!-- block -->
-  {% block content %} {% endblock %}
-
+  {% block content %}{% endblock %}
   <script src="js/script.js"></script>
 </body>
 </html>
