@@ -4,11 +4,9 @@ var gulp = require('gulp'),
     compass = require('gulp-compass'),
     concat = require('gulp-concat'),
     connect = require('gulp-connect'),
-    //handlebars = require('gulp-handlebars'),
-    //compileHandlebars = require('gulp-compile-handlebars'),
     wiredep = require('wiredep').stream,
-    nunjucks = require('gulp-nunjucks-render'),
-    rename = require('gulp-rename');
+    nunjucks = require('gulp-nunjucks-render');
+    //rename = require('gulp-rename');
 
 var jsSrc = ['dev/scripts/*.js'];
 var sassSrc = ['dev/sass/style.scss'];
