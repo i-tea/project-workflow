@@ -49,6 +49,7 @@ gulp.task('nunjucks', function() {
       path: ['dev/tpl/']
     }))
   .pipe(gulp.dest('assets'))
+  .pipe(connect.reload());
 });
 
 gulp.task('watch', function () {
@@ -57,4 +58,4 @@ gulp.task('watch', function () {
     gulp.watch(nunjucksSrc, ['nunjucks']);
 });
 
-gulp.task('default', ['js', 'compass', 'connect', 'nunjucks', 'watch']);
+gulp.task('default', ['js', 'compass', 'nunjucks', 'connect', 'watch']);
