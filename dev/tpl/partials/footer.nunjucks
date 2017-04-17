@@ -1,0 +1,29 @@
+<!-- footer.nunjucks -->
+{% block footer %}
+<footer class="footer footer-color-black">
+    <div class="container">
+        <nav class="pull-left navbar-burger">
+            <ul>
+                <li></li>
+            </ul>
+        </nav>
+        <div class="social-area pull-right">
+            <a class="btn btn-social btn-facebook" href="#">
+                <i class="fa fa-facebook-square"></i>
+            </a>
+            <a class="btn btn-social btn-twitter" href="#">
+                <i class="fa fa-twitter"></i>
+            </a>
+            <a class="btn btn-social btn-pinterest" href="#">
+                <i class="fa fa-google-plus-square"></i>
+            </a>
+            <a class="btn btn-social btn-pinterest" href="#">
+                <i class="fa fa-dribbble"></i>
+            </a>
+        </div>
+        <div class="copyright">
+            © 2017 <a href="#">@i-tea</a>
+        </div>
+    </div>
+</footer>
+{% endblock %}
