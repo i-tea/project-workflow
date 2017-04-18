@@ -8,3 +8,7 @@ $font-family-base: 'Raleway', sans-serif;
 @import "settings";
 @import "layout";
 @import "mixins";
+
+
+// Partials
+@import "partials/header";
