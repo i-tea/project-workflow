@@ -1,11 +1,11 @@
-<!-- index.nunjucks -->
-{% extends "layout/layout.nunjucks" %}
+<!-- index.njk -->
+{% extends "layout/layout.njk" %}
 
 {% block content %}
-{% import 'partials/navigation.nunjucks' as nav %}
+{% import 'partials/navigation.njk' as nav %}
 {{nav.active('home')}}
 
-{% include 'partials/jumbotron.nunjucks' %}
+{% include 'partials/jumbotron.njk' %}
 
 <h1>This is the index page</h1>
 
@@ -17,5 +17,5 @@
     </div>
 </div>
 
-{% include 'partials/footer.nunjucks' %}
+{% include 'partials/footer.njk' %}
 {% endblock %}
