@@ -23,12 +23,10 @@ gulp.task('bower', function() {
         .pipe(gulp.dest(config.bowerPath))
 });
 
-/*
 gulp.task('icons', function() {
-    return gulp.src(config.bowerPath + '/fontawesome/fonts/**.*')
-        .pipe(gulp.dest('./dev/fonts'));
+    return gulp.src(config.bowerPath + '/font-awesome/fonts/**.*')
+        .pipe(gulp.dest('./assets/fonts'));
 });
-*/
 
 gulp.task('sass', function() {
     return gulp.src(config.sassPath + '/style.scss')
@@ -37,7 +35,7 @@ gulp.task('sass', function() {
             loadPath: [
                 config.sassPath,
                 config.bowerPath + '/bootstrap-sass/assets/stylesheets',
-                //config.bowerPath + '/fontawesome/scss',
+                config.bowerPath + '/font-awesome/scss',
             ]
         })
             .on("error", notify.onError(function (error) {
@@ -76,4 +74,4 @@ gulp.task('watch', function () {
     gulp.watch(config.sassPath + '/**/*.scss', ['sass']);
 });
 
-gulp.task('default', ['js', 'bower', 'sass', 'nunjucks', 'connect', 'watch']);
+gulp.task('default', ['js', 'bower', 'sass', 'icons', 'nunjucks', 'connect', 'watch']);
