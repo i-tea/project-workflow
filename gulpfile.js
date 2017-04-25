@@ -9,6 +9,21 @@ var gulp = require('gulp'),
 
 var jsSrc,
     nunjucksSrc,
+    env,
+
+env = process.env.NODE_ENV || 'development';
+/*
+
+if (env==='development') {
+    outputDir = 'builds/development/';
+    sassStyle = 'expanded';
+} else {
+    outputDir = 'builds/production/';
+    sassStyle = 'compressed';
+}
+
+*/
+
 
 jsSrc = ['dev/scripts/*.js'];
 nunjucksSrc = ['dev/tpl/**/*.+(html|nunjucks|njk)'];
