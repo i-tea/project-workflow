@@ -11,7 +11,7 @@ var jsSrc,
     nunjucksSrc,
 
 jsSrc = ['dev/scripts/*.js'];
-nunjucksSrc = ['dev/tpl/*.+(html|nunjucks|njk)'];
+nunjucksSrc = ['dev/tpl/**/*.+(html|nunjucks|njk)'];
 
 var config = {
     sassPath: './dev/sass',
