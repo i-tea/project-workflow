@@ -9,6 +9,7 @@ var gulp = require('gulp'),
 
 var jsSrc,
     nunjucksSrc,
+    nunjucksAssets,
     env,
 
 env = process.env.NODE_ENV || 'development';
@@ -27,6 +28,7 @@ if (env==='development') {
 
 jsSrc = ['dev/scripts/*.js'];
 nunjucksSrc = ['dev/tpl/**/*.+(html|nunjucks|njk)'];
+nunjucksAssets = ['dev/tpl/*.+(html|nunjucks|njk)'];
 
 var config = {
     sassPath: './dev/sass',
@@ -75,7 +77,7 @@ gulp.task('connect', function(){
 });
 
 gulp.task('nunjucks', function() {
-  return gulp.src(nunjucksSrc)
+  return gulp.src(nunjucksAssets)
   .pipe(nunjucks({
       path: ['dev/tpl/']
     }))
