@@ -3,6 +3,8 @@ var gulp = require('gulp'),
     util = require('gulp-util'),
     bower = require('gulp-bower'),
     notify = require('gulp-notify'),
+    gulpif = require('gulp-if'),
+    uglify = require('gulp-uglify'),
     concat = require('gulp-concat'),
     connect = require('gulp-connect'),
     nunjucks = require('gulp-nunjucks-render');
@@ -65,6 +67,7 @@ gulp.task('sass', function() {
 gulp.task('js', function () {
     gulp.src(jsSrc)
         .pipe(concat('script.js'))
+        .pipe(uglify())
         .pipe(gulp.dest('assets/js'))
         .pipe(connect.reload())
 });
