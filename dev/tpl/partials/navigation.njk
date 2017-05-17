@@ -2,9 +2,9 @@
 {% macro active(activePage='home') %}
 <nav class="navbar">
   <div class="navbar-header">
-    <a class="navbar-brand" href="#">Project workflow by @i-tea</a>
+    <a class="navbar-logo" href="#">Michaela Fliborova</a>
   </div>
-    <ul class="nav navbar-nav">
+    <ul class="navbar-nav">
       <li><a href="#" class="{%if activePage == 'home' %} active {% endif %}">Home</a></li>
       <li><a href="#" class="{%if activePage == 'about' %} active {% endif %}">About</a></li>
       <li><a href="#" class="{%if activePage == 'contact' %} active {% endif %}">Contact</a></li>

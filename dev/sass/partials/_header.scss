@@ -1,13 +1,64 @@
-.navbar {
-    @extend .container;
-    background-color: #f8f8f8;
-    border-color: #e7e7e7;
-    .navbar-brand {
-        color: #1653a2;
+.main-header {
+    background: url('../img/bg-header.jpg') scroll no-repeat;
+    background-size: cover !important;
+    overflow: hidden;
+    width: 100%;
+    background-position: 0px 30%;
+    .main-header-section {
+        //background:  $body-primary-color;
+        //background: -webkit-linear-gradient(to bottom, $body-primary-color, $body-secondary-color);
+        background-image: linear-gradient(to left bottom, rgba(247, 19, 91, .8), rgba(48, 35, 235, .8));
+    }   
+    .navbar {
+        @extend .container-fluid;
+        background-color: transparent;
+        border: none;
+        position: fixed;
+        height: auto;
+        width: 100%;
+        margin: 0 auto;
+        padding-left: 50px;
+        padding-right: 50px;
+        .navbar-logo {
+            color: #fff;
+        }
+        .navbar-nav {
+            @extend .nav;
+            float: right;
+            padding-left: 0;
+            list-style: none;
+            > li {
+                padding-top: 10px;
+                > a {
+                    color: #fff;
+                    line-height: 45px;
+                    padding-left: 0;
+                    padding-right: 0;
+                    padding-bottom: 0;
+                    margin-right: 45px;
+                    &.active {
+                        border-bottom: 1px solid white;
+                        padding-bottom: 0;
+                    }
+                    &:hover {
+                        background: transparent;
+                        border-bottom: 1px solid white;
+                    }
+                }
+            }
+        }
     }
-    .nav {
-        >li>a {
-            color: #777;
+    .jumbotron-header {
+        @extend .container;
+        padding-top: 100px;
+        .jumbotron {
+            background-color: transparent;
+            h1, p {
+                color: #fff;
+            }
         }
     }
 }
+
+
+

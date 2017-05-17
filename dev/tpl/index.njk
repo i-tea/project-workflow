@@ -2,10 +2,14 @@
 {% extends "layout/layout.njk" %}
 
 {% block content %}
-{% import 'partials/navigation.njk' as nav %}
-{{nav.active('home')}}
+<div class="main-header">
+    <div class="main-header-section">
+        {% import 'partials/navigation.njk' as nav %}
+        {{nav.active('home')}}
 
-{% include 'partials/jumbotron.njk' %}
+        {% include 'partials/jumbotron.njk' %}
+    </div>
+</div>
 
 <h1>This is the index page</h1>
 
